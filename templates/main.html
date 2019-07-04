@@ -5,7 +5,7 @@
         body {
             background: black; }
         section {
-            background: black;
+            background: white;
             color: white;
             border-radius: 1em;
             padding: 1em;
@@ -16,16 +16,24 @@
             transform: translate(-50%, -50%) }
     
         .prevBtn {
+            position: absolute;
             background: transparent;
             border-style: solid;
             border-color: white;
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            color: #0429fb;
-            top:50%; }
+            top:50%;
+            margin-left:-15%;
+            margin-top: 15%;
+            background: url("/static/arrow.png");
+            background-size: 50px;
+            background-position: center;
+            transform: rotate(180deg);
+        }
     
         .playBtn {
+            position: absolute;
             background: transparent;
             border-style: solid;
             border-color: white;
@@ -36,17 +44,27 @@
             color: #0429fb;
             font-size: 25px;
            /* margin: -20px -50px;*/
-            top:50%; }
+            top:50%;
+            background: url("/static/play.png");
+            background-size: 100px;
+            background-position: center;
+        }
     
         .nextBtn {
+            position: absolute;
             background: transparent;
             border-style: solid;
             border-color: white;
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            color: #0429fb;
-            top:50%; }
+            top:50%;
+            margin-left:7%;
+            margin-top: 15%;
+            background: url("/static/arrow.png");
+            background-size: 50px;
+            background-position: center;
+        }
     
         .logo{
             display: block;
@@ -65,19 +83,23 @@
           text-align: center;
           font-size: 18px;
         }
-
     </style>
     
     <section>
-        <img class="logo" src="/static/logo55.png">
+        <img class="logo" src="/static/logo.png">
         <p class="songName">--------</p>
         <p class="artist"> Artist
         </br>
         </br>
         </br>
-        <button class="prevBtn"> P </button>
-        <button class="playBtn"> Play </button>
-        <button class="nextBtn"> N </button>
+            <button class="prevBtn"></button>
+            &nbsp;
+            &nbsp;
+            <button class="playBtn"></button>
+            &nbsp;
+            &nbsp;
+            <button class="nextBtn"></button>
+        
     </section>
     
 </html>
