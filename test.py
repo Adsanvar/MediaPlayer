@@ -12,7 +12,7 @@ def MediaPlayer():
     else:
         if "prev_btn" in request.form:
             print("Prev Clicked")
-            os.system("sudo dbus-send --system --dest=org.bluez /org/bluez/hci0/dev_D0_D2_B0_0D_1A_8E org.bluez.MediaControl1.Previous")
+            os.system("sudo dbus-send --system --print-reply --dest=org.bluez /org/bluez/hci0/dev_D0_D2_B0_0D_1A_8E org.bluez.MediaControl1.Previous")
             if click == 1:
                 return render_template("pause.html")
             if click == 0:
@@ -31,7 +31,7 @@ def MediaPlayer():
 
         if "next_btn" in request.form:
             print("Next Clicked")
-            os.system("sudo dbus-send --system --dest=org.bluez /org/bluez/hci0/dev_D0_D2_B0_0D_1A_8E org.bluez.MediaControl1.Next")
+            os.system("sudo dbus-send --system --print-reply --dest=org.bluez /org/bluez/hci0/dev_D0_D2_B0_0D_1A_8E org.bluez.MediaControl1.Next")
             if click == 1:
                 return render_template("pause.html")
             if click == 0:
