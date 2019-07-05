@@ -1,7 +1,7 @@
 import os
 from flask import Flask, render_template, request, flash
 app = Flask(__name__)
-
+#sudo dbus-send --system --print-reply --dest=org.bluez /org/bluez/hci0/dev_D0_D2_B0_0D_1A_8E/player2 org.freedesktop.DBus.Properties.Get string:org.bluez.MediaPlayer1 string:Track
 click = 0
 
 @app.route('/', methods=['GET', 'POST'])
