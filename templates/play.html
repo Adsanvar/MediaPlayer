@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    
+    <style>
+        body {
+            background: black; }
+        section {
+            background: black;
+            color: white;
+            border-radius: 1em;
+            padding: 1em;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%) }
+    
+        .prevBtn {
+            position: absolute;
+            background: transparent;
+            border-style: solid;
+            border-color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            top:50%;
+            margin-top: 17%;
+            margin-left: 20%;
+            background: url("/static/arrow.png");
+            background-size: 50px;
+            background-position: center;
+            transform: rotate(180deg);
+        }
+    
+        .playBtn {
+            position: absolute;
+            background: transparent;
+            border-style: solid;
+            border-color: white;
+            position: relative;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            color: #0429fb;
+            font-size: 25px;
+            margin-left: 37%;
+           /* margin: -20px -50px;*/
+            top:50%;
+            background: url("/static/play.png");
+            background-size: 100px;
+            background-position: center;
+        } 
+    
+        .nextBtn {
+            position: absolute;
+            background: transparent;
+            border-style: solid;
+            border-color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            top:50%;
+            margin-top: 17%;
+            margin-left: 5%;
+            background: url("/static/arrow.png");
+            background-size: 50px;
+            background-position: center;
+        }
+    
+        .logo{
+            display: block;
+            margin-left:auto;
+            margin-right:auto;
+            width: 50%;
+        }
+    
+        .songName{
+            text-align: center;
+            font-size: 25px;
+        
+        }
+    
+        .artist {
+          text-align: center;
+          font-size: 18px;
+        }
+    
+    </style>
+    <section>
+        <img class="logo" src="/static/logo.png">
+        <p class="songName">--------</p>
+        <p class="artist"> Artist
+        </br>
+        </br>
+        </br>
+        <form action="/" method="post">
+            <button class="prevBtn" type="submit" name="prev_btn"></button>
+            &nbsp;
+            &nbsp;
+            <button class="playBtn" type="submit" name="play_btn" ></button>
+            &nbsp;
+            &nbsp;
+            <button class="nextBtn" type="submit" name="next_btn" ></button>
+        </form>
+        
+    </section>
+    
+</html>
