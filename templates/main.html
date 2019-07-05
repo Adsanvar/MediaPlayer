@@ -24,8 +24,8 @@
             height: 50px;
             border-radius: 50%;
             top:50%;
-            margin-left:-15%;
-            margin-top: 15%;
+            margin-top: 17%;
+            margin-left: 20%;
             background: url("/static/arrow.png");
             background-size: 50px;
             background-position: center;
@@ -43,6 +43,7 @@
             border-radius: 50%;
             color: #0429fb;
             font-size: 25px;
+            margin-left: 37%;
            /* margin: -20px -50px;*/
             top:50%;
             background: url("/static/play.png");
@@ -59,8 +60,8 @@
             height: 50px;
             border-radius: 50%;
             top:50%;
-            margin-left:7%;
-            margin-top: 15%;
+            margin-top: 17%;
+            margin-left: 5%;
             background: url("/static/arrow.png");
             background-size: 50px;
             background-position: center;
@@ -83,8 +84,8 @@
           text-align: center;
           font-size: 18px;
         }
-    </style>
     
+    </style>
     <section>
         <img class="logo" src="/static/logo.png">
         <p class="songName">--------</p>
@@ -92,13 +93,15 @@
         </br>
         </br>
         </br>
-            <button class="prevBtn"></button>
+        <form action="/" method="post">
+            <button class="prevBtn" type="submit" name="prev_btn"></button>
             &nbsp;
             &nbsp;
-            <button class="playBtn"></button>
+            <button class="playBtn" type="submit" name="play_btn" ></button>
             &nbsp;
             &nbsp;
-            <button class="nextBtn"></button>
+            <button class="nextBtn" type="submit" name="next_btn" ></button>
+        </form>
         
     </section>
     
