@@ -1,8 +1,15 @@
-import os
+import os, threading, webbrowser
 from flask import Flask, render_template, request, flash
 app = Flask(__name__)
 #sudo dbus-send --system --print-reply --dest=org.bluez /org/bluez/hci0/dev_D0_D2_B0_0D_1A_8E/player2 org.freedesktop.DBus.Properties.Get string:org.bluez.MediaPlayer1 string:Track
 click = 0
+
+def openWeb():
+    port = 8080
+    url = "http://127.0.0.1:"+str(port)
+    threading.Timer(1.25, lambda: webbrowser.open(url)).start()
+
+
 
 @app.route('/', methods=['GET', 'POST'])
 def MediaPlayer():
@@ -52,5 +59,8 @@ def MediaPlayer():
                 return render_template("play.html")
 
 
+
 if __name__ == '__main__':
+    openWeb()
     app.run(debug = True, port=8080)
+
