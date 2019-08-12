@@ -27,9 +27,8 @@
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            top:50%;
-            margin-top: 17%;
-            margin-left: 20%;
+            top:40%;
+            left: 29%;
             background: url("/static/arrow.png");
             background-size: 50px;
             background-position: center;
@@ -47,9 +46,9 @@
             border-radius: 50%;
             color: #0429fb;
             font-size: 25px;
-            margin-left: 37%;
+            top: 25%;
+            left: 37%;
            /* margin: -20px -50px;*/
-            top:50%;
             background: url("/static/play.png");
             background-size: 100px;
             background-position: center;
@@ -63,12 +62,39 @@
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            top:50%;
-            margin-top: 17%;
-            margin-left: 5%;
+            top:40%;
+            left: 59%;
             background: url("/static/arrow.png");
             background-size: 50px;
             background-position: center;
+        }
+        .upBtn {
+            position: absolute;
+            background: transparent;
+            border-style: solid;
+            border-color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: url("/static/arrow.png");
+            background-size: 50px;
+            background-position: center;
+            transform: rotate(270deg);
+        }
+
+        .downBtn {
+            position: absolute;
+            background: transparent;
+            border-style: solid;
+            border-color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            top: 95%;
+            background: url("/static/arrow.png");
+            background-size: 50px;
+            background-position: center;
+            transform: rotate(90deg);
         }
     
         .logo{
@@ -88,16 +114,38 @@
           text-align: center;
           font-size: 18px;
         }
+
+        .form
+        {
+            position: absolute;
+            background: transparent;
+            /*border-style: solid;
+            border-color: white;*/
+            width: 150%;
+            height: 75%;
+            margin-left: -25%;
+        }
+        
+        .vol
+        {
+            position: absolute;
+            text-orientation: upright;
+            writing-mode: vertical-lr;
+            top: 32%;
+        }
     
     </style>
     <section>
         <img class="logo" src="/static/logo.png">
-        <p class="songName">--------</p>
-        <p class="artist"> Artist
+        <p name="song_Name" class="songName">--------</p>
+        <p name="Artist" class="artist"> Artist </p>
         </br>
-        </br>
-        </br>
-        <form action="/" method="post">
+        <form action="/" method="post" class="form">
+            <p class="vol">VOLUME</p>
+            <button class="upBtn" type="submit" name="up_btn"></button>
+            <button class="downBtn" type="submit" name="down_btn" ></button>
+            &nbsp;
+            &nbsp;
             <button class="prevBtn" type="submit" name="prev_btn"></button>
             &nbsp;
             &nbsp;
