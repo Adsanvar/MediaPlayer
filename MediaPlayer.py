@@ -11,9 +11,8 @@ def openWeb():
     threading.Timer(1.25, lambda: webbrowser.open(url)).start()
 
 def processTrack():
+    return
     
-
-
 @app.route('/', methods=['GET', 'POST'])
 def MediaPlayer():
     global click
