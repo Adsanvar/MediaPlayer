@@ -72,10 +72,10 @@ def MediaPlayer():
                 os.system("amixer set Master 2%+")
             except Exception as e:
                 print(str(e))
-          '''  if click == 1:
-                return render_template("pause.html")
-            if click == 0:
-                return render_template("play.html")'''
+            #if click == 1:
+                #return render_template("pause.html")
+            #if click == 0:
+             #   return render_template("play.html")
             
         if "down_btn" in request.form:
             print("Vol Down")
@@ -83,10 +83,10 @@ def MediaPlayer():
                 os.system("amixer set Master 2%-")
             except Exception as e:
                 print(str(e))
-           ''' if click == 1:
-                return render_template("pause.html")
-            if click == 0:
-                return render_template("play.html")'''
+           # if click == 1:
+            #    return render_template("pause.html")
+            #if click == 0:
+            #    return render_template("play.html")
 
 
 if __name__ == '__main__':
