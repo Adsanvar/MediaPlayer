@@ -4,6 +4,7 @@ app = Flask(__name__)
 #sudo dbus-send --system --print-reply --dest=org.bluez /org/bluez/hci0/dev_D0_D2_B0_0D_1A_8E/player2 org.freedesktop.DBus.Properties.Get string:org.bluez.MediaPlayer1 string:Track
 click = 0
 opener = 0
+
 def openWeb():
     global opener
     opener +=1
@@ -36,7 +37,7 @@ def MediaPlayer():
                 return render_template("play.html")
         if "play_btn" in request.form:
             print("Play Clicked")
-          
+        
             if click == 0:
                 click += 1
                 print(click)
@@ -67,15 +68,24 @@ def MediaPlayer():
         if "upBtn" in request.form:
             print("Vol Up")
             try:
-                os.system("sudo amixer set Master 2%+")
+                os.system("amixer set Master 2%+")
             except Exception as e:
                 print(str(e))
+             if click == 1:
+                return render_template("pause.html")
+            if click == 0:
+                return render_template("play.html")
+            
         if "downBtn" in request.form:
             print("Vol Down")
             try:
-                os.system("sudo amixer set Master 2%-")
+                os.system("amixer set Master 2%-")
             except Exception as e:
                 print(str(e))
+             if click == 1:
+                return render_template("pause.html")
+            if click == 0:
+                return render_template("play.html")
 
 
 if __name__ == '__main__':
