@@ -65,27 +65,28 @@ def MediaPlayer():
                 return render_template("pause.html")
             if click == 0:
                 return render_template("play.html")
-        if "upBtn" in request.form:
+
+        if "up_btn" in request.form:
             print("Vol Up")
             try:
                 os.system("amixer set Master 2%+")
             except Exception as e:
                 print(str(e))
-            if click == 1:
+          '''  if click == 1:
                 return render_template("pause.html")
             if click == 0:
-                return render_template("play.html")
+                return render_template("play.html")'''
             
-        if "downBtn" in request.form:
+        if "down_btn" in request.form:
             print("Vol Down")
             try:
                 os.system("amixer set Master 2%-")
             except Exception as e:
                 print(str(e))
-            if click == 1:
+           ''' if click == 1:
                 return render_template("pause.html")
             if click == 0:
-                return render_template("play.html")
+                return render_template("play.html")'''
 
 
 if __name__ == '__main__':
