@@ -5,7 +5,6 @@ app = Flask(__name__)
 click = 0
 
 def openWeb():
-    global opener
     port = 8080
     url = "http://127.0.0.1:"+str(port)
     print("~~~~~~~~~~~~~~~~~~~~~~~Openning~~~~~~~~~~~~~~~~~")
