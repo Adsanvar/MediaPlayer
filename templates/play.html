@@ -15,10 +15,11 @@
             padding: 1em;
             position: absolute;
             /*top: 50%;*/
-            top: 15%;
+            top: 25%;
             left: 50%;
             margin-right: -50%;
-            transform: translate(-50%, -50%) }
+            transform: translate(-50%, -50%)
+            }
     
         .prevBtn {
             position: absolute;
@@ -91,7 +92,7 @@
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            top: 95%;
+            top: 80%;
             background: url("/static/arrow.png");
             background-size: 50px;
             background-position: center;
@@ -108,12 +109,14 @@
         .songName{
             text-align: center;
             font-size: 25px;
+            margin-top: 1%;
         
         }
     
         .artist {
           text-align: center;
           font-size: 18px;
+          margin-top: -2%;
         }
 
         .form
@@ -125,6 +128,8 @@
             width: 150%;
             height: 75%;
             margin-left: -25%;
+            top: 65%;
+            
         }
         
         .vol
@@ -132,7 +137,9 @@
             position: absolute;
             text-orientation: upright;
             writing-mode: vertical-lr;
-            top: 32%;
+            font-size: 12px;
+            margin-left: 2%;
+            top: 40%;
         }
     
     </style>
@@ -142,7 +149,7 @@
         <p name="Artist" class="artist"> Artist </p>
         </br>
         <form action="/" method="post" class="form">
-            <p class="vol">VOLUME</p>
+            <p class="vol">VOL</p>
             <button class="upBtn" type="submit" name="up_btn"></button>
             <button class="downBtn" type="submit" name="down_btn" ></button>
             &nbsp;

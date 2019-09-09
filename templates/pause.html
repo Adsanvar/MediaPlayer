@@ -97,6 +97,7 @@
             transform: rotate(90deg);
         }
     
+     
         .logo{
             display: block;
             margin-left:auto;
@@ -107,23 +108,27 @@
         .songName{
             text-align: center;
             font-size: 25px;
+            margin-top: 1%;
         
         }
     
         .artist {
           text-align: center;
           font-size: 18px;
+          margin-top: -2%;
         }
 
         .form
         {
             position: absolute;
             background: transparent;
-            /*border-style: solid;
+          /*  border-style: solid;
             border-color: white;*/
             width: 150%;
             height: 75%;
             margin-left: -25%;
+            top: 65%;
+            
         }
         
         .vol
@@ -131,7 +136,9 @@
             position: absolute;
             text-orientation: upright;
             writing-mode: vertical-lr;
-            top: 32%;
+            font-size: 12px;
+            margin-left: 2%;
+            top: 40%;
         }
     
     </style>
@@ -141,7 +148,7 @@
         <p name="Artist" class="artist"> Artist </p>
         </br>
         <form action="/" method="post" class="form">
-            <p class="vol">VOLUME</p>
+            <p class="vol">VOL</p>
             <button class="upBtn" type="submit" name="up_btn"></button>
             <button class="downBtn" type="submit" name="down_btn" ></button>
             &nbsp;
