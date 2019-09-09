@@ -37,8 +37,8 @@ def MediaPlayer():
                 print(click)
                 try:
                    os.system("sudo dbus-send --system --print-reply --dest=org.bluez /org/bluez/hci0/dev_D0_D2_B0_0D_1A_8E org.bluez.MediaControl1.Play")
-                   os.system("sudo dbus-send --system --print-reply --dest=org.bluez /org/bluez/hci0/dev_D0_D2_B0_0D_1A_8E org.freedesktop.DBus.Properties.Get string:org.bluez.MediaPlayer1 string:Track")
-                   #print("~~~~~~~~~~~~~~~TEST:\n" + str(test))
+                   test = os.popen("sudo dbus-send --system --print-reply --dest=org.bluez /org/bluez/hci0/dev_D0_D2_B0_0D_1A_8E/player0 org.freedesktop.DBus.Properties.Get string:org.bluez.MediaPlayer1 string:Track").read()
+                   print("~~~~~~~~~~~~~~~TEST:\n" + str(test))
                 except Exception as e:
                     print(str(e))
                 return render_template("pause.html")
