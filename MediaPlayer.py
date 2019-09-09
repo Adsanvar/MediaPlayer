@@ -67,13 +67,13 @@ def MediaPlayer():
         if "upBtn" in request.form:
             print("Vol Up")
             try:
-                os.system("amixer set Master 2%+")
+                os.system("sudo amixer set Master 2%+")
             except Exception as e:
                 print(str(e))
         if "downBtn" in request.form:
-            print("Vol Up")
+            print("Vol Down")
             try:
-                os.system("amixer set Master 2%-")
+                os.system("sudo amixer set Master 2%-")
             except Exception as e:
                 print(str(e))
 
