@@ -54,7 +54,7 @@ def MediaPlayer():
                    os.system("sudo dbus-send --system --print-reply --dest=org.bluez /org/bluez/hci0/dev_D0_D2_B0_0D_1A_8E org.bluez.MediaControl1.Play")
                    cmd = "sudo dbus-send --system --print-reply --dest=org.bluez /org/bluez/hci0/dev_D0_D2_B0_0D_1A_8E org.freedesktop.DBus.Properties.Get string:org.bluez.MediaControl1 string:Player"
                    player = getPlayerName(subprocess.check_output(cmd, shell=True))
-                   cmd2 = "sudo grep \'Title\'  dbus-send --system --print-reply --dest=org.bluez "+player+" org.freedesktop.DBus.Properties.Get string:org.bluez.MediaPlayer1 string:Track"                  
+                   cmd2 = "sudo dbus-send --system --print-reply --dest=org.bluez "+player+" org.freedesktop.DBus.Properties.Get string:org.bluez.MediaPlayer1 string:Track"                  
                    vals = subprocess.check_output(cmd2,shell=True)
                    processTrack(vals)
                    #player = player[:-1]
