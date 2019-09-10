@@ -24,9 +24,8 @@ def getPlayerName(s):
                 last = count
             else:
                 first = count
-    return s[first:last]
+    return s[first:last-1]
                 
-
     
 @app.route('/', methods=['GET', 'POST'])
 def MediaPlayer():
