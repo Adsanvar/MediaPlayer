@@ -51,7 +51,7 @@ def MediaPlayer():
                    other = subprocess.check_output(cmd, shell=True)
                    
                    #test = os.popen(cmd).read()
-                   print("~~~~~~~~~~~~~~~OPEN:\n" + processPlayer(other))
+                   print("~~~~~~~~~~~~~~~OPEN:\n" + str(processPlayer(other)))
                    #print("\n~~~~~~~~~~SUB:::" + str(other))
                 except Exception as e:
                     print(str(e))
