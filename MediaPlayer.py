@@ -23,7 +23,6 @@ def processTrack(val):
         if( e == "]"):
             last = count
     arr = val[first:last-1]
-    print(arr)
     li = list(arr.split("\n"))
     print(getName(li[track]))
     print(getName(li[artist]))
