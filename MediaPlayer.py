@@ -21,7 +21,8 @@ def processTrack(val):
         if( e == "]"):
             last = count
     arr = val[first:last-1]
-    li = list(arr.split("dict entry"))
+    print(arr)
+    li = list(arr.split(")"))
     return li
 
     
