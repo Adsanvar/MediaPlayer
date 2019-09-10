@@ -60,7 +60,7 @@ def MediaPlayer():
                 return render_template("play.html")
         if "play_btn" in request.form:
             print("Play Clicked")
-            form.submit.label.text = "HELEOJ"
+            request.form.submit.label.text = "HELEOJ"
             if click == 0:
                 click += 1
                 print(click)
