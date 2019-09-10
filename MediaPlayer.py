@@ -19,9 +19,7 @@ def getPlayerName(s):
         count += 1
         if( e == "\""):
             print("Found first at : " + str(count))
-            s = s[count:]
-            s = s[:-1]
-            return s
+            return s[count:]
 
     
 @app.route('/', methods=['GET', 'POST'])
@@ -52,9 +50,10 @@ def MediaPlayer():
                    #cmd ="sudo dbus-send --system --print-reply --dest=org.bluez /org/bluez/hci0/dev_D0_D2_B0_0D_1A_8E org.freedesktop.DBus.Properties.Get string:org.bluez.MediaPlayer1 string:Track"
                    cmd = "sudo dbus-send --system --print-reply --dest=org.bluez /org/bluez/hci0/dev_D0_D2_B0_0D_1A_8E org.freedesktop.DBus.Properties.Get string:org.bluez.MediaControl1 string:Player"
                    other = subprocess.check_output(cmd, shell=True)
-                
+                   player = getPlayerName(other)
+                   player = player[:-1]
                    #test = os.popen(cmd).read()
-                   print("~~~~~~~~~~~~~~~OPEN:\n" + getPlayerName(other))
+                   print("~~~~~~~~~~~~~~~OPEN:\n" + str(player))
                    #print("\n~~~~~~~~~~SUB:::" + str(other))
                 except Exception as e:
                     print(str(e))
