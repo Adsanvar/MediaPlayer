@@ -40,9 +40,9 @@ def MediaPlayer():
                    #cmd = "sudo dbus-send --system --print-reply --dest=org.bluez /org/bluez/hci0/dev_D0_D2_B0_0D_1A_8E/player0 org.freedesktop.DBus.Properties.Get string:org.bluez.MediaPlayer1 string:Track"
                    #cmd ="sudo dbus-send --system --print-reply --dest=org.bluez /org/bluez/hci0/dev_D0_D2_B0_0D_1A_8E org.freedesktop.DBus.Properties.Get string:org.bluez.MediaPlayer1 string:Track"
                    cmd = "sudo dbus-send --system --print-reply --dest=org.bluez /org/bluez/hci0/dev_D0_D2_B0_0D_1A_8E org.freedesktop.DBus.Properties.Get string:org.bluez.MediaControl1 string:Player"
-                   #other = subprocess.check_output(cmd, shell=True)
-                   test = os.popen(cmd).read()
-                   print("~~~~~~~~~~~~~~~OPEN:\n" + str(test))
+                   other = subprocess.check_output(cmd, shell=True)
+                   #test = os.popen(cmd).read()
+                   print("~~~~~~~~~~~~~~~OPEN:\n" + str(other))
                    #print("\n~~~~~~~~~~SUB:::" + str(other))
                 except Exception as e:
                     print(str(e))
