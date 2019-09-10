@@ -22,7 +22,7 @@ def processTrack(val):
             last = count
     arr = val[first:last-1]
     print(arr)
-    li = list(arr.split(")"))
+    li = list(arr.split("\n"))
     return li
 
     
