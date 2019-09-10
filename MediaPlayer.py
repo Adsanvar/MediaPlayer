@@ -14,6 +14,8 @@ def processTrack(val):
     count = 0 
     first = 0
     last = 0
+    track = 3
+    artist = 19
     for e in val:
         count += 1
         if( e == "["):
@@ -23,7 +25,8 @@ def processTrack(val):
     arr = val[first:last-1]
     print(arr)
     li = list(arr.split("\n"))
-    print("~~~~~~"+li[4]+"~~~~~~")
+    print("~~~~~~Song: "+li[3]+"~~~~~~")
+    print("~~~~~~Artist: "+li[19]+"~~~~~~")
     return li
 
     
