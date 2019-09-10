@@ -25,12 +25,11 @@ def processTrack(val):
     arr = val[first:last-1]
     print(arr)
     li = list(arr.split("\n"))
-    print("~~~~~~Song: "+li[3]+"~~~~~~")
-    print("~~~~~~Artist: "+li[19]+"~~~~~~")
-    return li
+    print(getName(li[track]))
+    print(getName(li[artist]))
 
     
-def getPlayerName(s):
+def getName(s):
     count = 0 
     first = 0
     last = 0
@@ -69,10 +68,10 @@ def MediaPlayer():
                 try:
                    os.system("sudo dbus-send --system --print-reply --dest=org.bluez /org/bluez/hci0/dev_D0_D2_B0_0D_1A_8E org.bluez.MediaControl1.Play")
                    cmd = "sudo dbus-send --system --print-reply --dest=org.bluez /org/bluez/hci0/dev_D0_D2_B0_0D_1A_8E org.freedesktop.DBus.Properties.Get string:org.bluez.MediaControl1 string:Player"
-                   player = getPlayerName(subprocess.check_output(cmd, shell=True))
+                   player = getName(subprocess.check_output(cmd, shell=True))
                    cmd2 = "sudo dbus-send --system --print-reply --dest=org.bluez "+player+" org.freedesktop.DBus.Properties.Get string:org.bluez.MediaPlayer1 string:Track"                  
                    vals = subprocess.check_output(cmd2,shell=True)
-                   print(processTrack(vals))
+                   processTrack(vals)
                    #player = player[:-1]
                    #test = os.popen(cmd).read()
                    #print("~~~~~~~~~~~~~~~OPEN:\n" + str(vals))
