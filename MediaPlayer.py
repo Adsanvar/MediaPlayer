@@ -11,7 +11,8 @@ def openWeb():
     threading.Timer(1.25, lambda: webbrowser.open(url)).start()
 
 def processTrack(val):
-    print(type(val))
+    li = list(val.split("dict entry"))
+    return li
     
 def getPlayerName(s):
     count = 0 
@@ -55,8 +56,7 @@ def MediaPlayer():
                    player = getPlayerName(subprocess.check_output(cmd, shell=True))
                    cmd2 = "sudo dbus-send --system --print-reply --dest=org.bluez "+player+" org.freedesktop.DBus.Properties.Get string:org.bluez.MediaPlayer1 string:Track"                  
                    vals = subprocess.check_output(cmd2,shell=True)
-                   print(type(vals))
-                   #processTrack(vals)
+                   print(processTrack(vals))
                    #player = player[:-1]
                    #test = os.popen(cmd).read()
                    #print("~~~~~~~~~~~~~~~OPEN:\n" + str(vals))
