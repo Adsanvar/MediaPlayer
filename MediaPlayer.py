@@ -1,4 +1,4 @@
-import os, threading, webbrowser
+import os, threading, webbrowser, subprocess
 from flask import Flask, render_template, request, flash
 app = Flask(__name__)
 #sudo dbus-send --system --print-reply --dest=org.bluez /org/bluez/hci0/dev_D0_D2_B0_0D_1A_8E/player2 org.freedesktop.DBus.Properties.Get string:org.bluez.MediaPlayer1 string:Track
@@ -37,8 +37,11 @@ def MediaPlayer():
                 print(click)
                 try:
                    os.system("sudo dbus-send --system --print-reply --dest=org.bluez /org/bluez/hci0/dev_D0_D2_B0_0D_1A_8E org.bluez.MediaControl1.Play")
-                   test = os.system("sudo dbus-send --system --print-reply --dest=org.bluez /org/bluez/hci0/dev_D0_D2_B0_0D_1A_8E/player0 org.freedesktop.DBus.Properties.Get string:org.bluez.MediaPlayer1 string:Track")
-                   print("~~~~~~~~~~~~~~~TEST:\n" + str(test))
+                   cmd = "sudo dbus-send --system --print-reply --dest=org.bluez /org/bluez/hci0/dev_D0_D2_B0_0D_1A_8E/player0 org.freedesktop.DBus.Properties.Get string:org.bluez.MediaPlayer1 string:Track"
+                   other = subprocess.check_output(cmd, shell=True)
+                   test = os.popen(cmd).read()
+                   print("~~~~~~~~~~~~~~~OPEN:\n" + str(test))
+                   print("\n~~~~~~~~~~SUB:::" + str(other))
                 except Exception as e:
                     print(str(e))
                 return render_template("pause.html")
