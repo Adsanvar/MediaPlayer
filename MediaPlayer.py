@@ -11,8 +11,19 @@ def openWeb():
     threading.Timer(1.25, lambda: webbrowser.open(url)).start()
 
 def processTrack(val):
-    li = list(val.split("dict entry"))
+    count = 0 
+    first = 0
+    last = 0
+    for e in val:
+        count += 1
+        if( e == "["):
+            first = count
+        if( e == "]"):
+            last = count
+    arr = val[first:last-1]
+    li = list(arr.split("dict entry"))
     return li
+
     
 def getPlayerName(s):
     count = 0 
