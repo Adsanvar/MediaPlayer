@@ -19,7 +19,9 @@ def getPlayerName(s):
         count += 1
         if( e == "\""):
             print("Found first at : " + str(count))
-            return s[count:-1]
+            s = s[count:]
+            s = s[:-1]
+            return s
 
     
 @app.route('/', methods=['GET', 'POST'])
