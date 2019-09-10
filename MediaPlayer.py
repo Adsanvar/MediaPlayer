@@ -12,7 +12,7 @@ def openWeb():
 
 def processTrack(val):
     for x in val:
-        print(x)
+        print("{}: {}".format(x, val))
     
 def getPlayerName(s):
     count = 0 
