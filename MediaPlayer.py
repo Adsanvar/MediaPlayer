@@ -51,14 +51,13 @@ def MediaPlayer():
                 print(click)
                 try:
                    os.system("sudo dbus-send --system --print-reply --dest=org.bluez /org/bluez/hci0/dev_D0_D2_B0_0D_1A_8E org.bluez.MediaControl1.Play")
-                   #cmd = "sudo dbus-send --system --print-reply --dest=org.bluez /org/bluez/hci0/dev_D0_D2_B0_0D_1A_8E/player0 org.freedesktop.DBus.Properties.Get string:org.bluez.MediaPlayer1 string:Track"
-                   #cmd ="sudo dbus-send --system --print-reply --dest=org.bluez /org/bluez/hci0/dev_D0_D2_B0_0D_1A_8E org.freedesktop.DBus.Properties.Get string:org.bluez.MediaPlayer1 string:Track"
                    cmd = "sudo dbus-send --system --print-reply --dest=org.bluez /org/bluez/hci0/dev_D0_D2_B0_0D_1A_8E org.freedesktop.DBus.Properties.Get string:org.bluez.MediaControl1 string:Player"
-                   other = subprocess.check_output(cmd, shell=True)
-                   player = getPlayerName(other)
+                   player = getPlayerName(subprocess.check_output(cmd, shell=True))
+                   cmd2 = "sudo grep \'Title\'  dbus-send --system --print-reply --dest=org.bluez "+player+" org.freedesktop.DBus.Properties.Get string:org.bluez.MediaPlayer1 string:Track"                  
+                   vals = subprocess.check_output(cmd2,shell=True)
                    #player = player[:-1]
                    #test = os.popen(cmd).read()
-                   print("~~~~~~~~~~~~~~~OPEN:\n" + str(player))
+                   print("~~~~~~~~~~~~~~~OPEN:\n" + str(vals))
                    #print("\n~~~~~~~~~~SUB:::" + str(other))
                 except Exception as e:
                     print(str(e))
