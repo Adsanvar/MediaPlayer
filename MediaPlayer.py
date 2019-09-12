@@ -62,63 +62,69 @@ def MediaPlayer():
             print("Prev Clicked")
             try:
                 os.system("sudo dbus-send --system --print-reply --dest=org.bluez /org/bluez/hci0/dev_D0_D2_B0_0D_1A_8E org.bluez.MediaControl1.Previous")
+                track()
             except Exception as e:
                 print(str(e))
             if click == 1:
-                return render_template("pause.html")
+                return render_template("pause.html", song = song, artist= artist)
             if click == 0:
-                return render_template("play.html")
+                return render_template("play.html", song = song, artist= artist)
         if "play_btn" in request.form:
             print("Play Clicked")
             if click == 0:
                 click += 1
                 print(click)
                 try:
-                   os.system("sudo dbus-send --system --print-reply --dest=org.bluez /org/bluez/hci0/dev_D0_D2_B0_0D_1A_8E org.bluez.MediaControl1.Play")
+                    os.system("sudo dbus-send --system --print-reply --dest=org.bluez /org/bluez/hci0/dev_D0_D2_B0_0D_1A_8E org.bluez.MediaControl1.Play")
+                    track()
                 except Exception as e:
                     print(str(e))
-                return render_template("pause.html")
+                return render_template("pause.html", song = song, artist= artist)
             if click == 1:
                 click = 0
                 print(click)
                 try:
                     os.system("sudo dbus-send --system --print-reply --dest=org.bluez /org/bluez/hci0/dev_D0_D2_B0_0D_1A_8E org.bluez.MediaControl1.Pause")
+                    track()
                 except Exception as e:
                     print(str(e))
-                return render_template("play.html")
+                return render_template("play.html", song = song, artist= artist)
 
         if "next_btn" in request.form:
             print("Next Clicked")
             try:
                 os.system("sudo dbus-send --system --print-reply --dest=org.bluez /org/bluez/hci0/dev_D0_D2_B0_0D_1A_8E org.bluez.MediaControl1.Next")
+                track()
             except Exception as e:
                 print(str(e))
             if click == 1:
-                return render_template("pause.html")
+                return render_template("pause.html", song = song, artist= artist)
             if click == 0:
-                return render_template("play.html")
+                return render_template("play.html", song = song, artist= artist)
 
         if "up_btn" in request.form:
             print("Vol Up")
             try:
                 os.system("amixer set Master 2%+")
+                track()
             except Exception as e:
                 print(str(e))
             if click == 1:
-                return render_template("pause.html")
+                return render_template("pause.html", song = song, artist= artist)
             if click == 0:
-                return render_template("play.html")
+                return render_template("play.html", song = song, artist= artist)
             
         if "down_btn" in request.form:
             print("Vol Down")
             try:
                 os.system("amixer set Master 2%-")
+                track()
             except Exception as e:
                 print(str(e))
             if click == 1:
-                return render_template("pause.html", song = "HI", artist="MIKE")
+                return render_template("pause.html", song = song, artist= artist)
             if click == 0:
-                return render_template("play.html", song = "HI2", artist="MIKE2")
+                return render_template("play.html", song = song, artist= artist)
 
 if __name__ == '__main__':
     openWeb()
