@@ -35,11 +35,8 @@ def processTrack(val):
             last = count
     arr = val[first:last-1]
     li = list(arr.split("\n"))
-    print("LIST: " + str(li))
     song = getName(li[track_index])
     artist = getName(li[artist_index])
-    print("PRE SONG: "+getName(li[track_index]))
-    print("PRE Artist: "+getName(li[artist_index]))
 
     
 def getName(s):
@@ -132,8 +129,8 @@ def MediaPlayer():
 
 if __name__ == '__main__':
     openWeb()
-    #app.run(debug = True, use_reloader=False, port=8080)
-    app.run(debug = True, port=8080)
+    app.run(debug = True, use_reloader=False, port=8080)
+    #app.run(debug = True, port=8080)
 
 
     
