@@ -35,7 +35,7 @@ def processTrack(val):
             last = count
     arr = val[first:last-1]
     li = list(arr.split("\n"))
-    print("LIST: " + li)
+    print("LIST: " + str(li))
     song = getName(li[track_index])
     artist = getName(li[artist_index])
     print("PRE SONG: "+getName(li[track_index]))
