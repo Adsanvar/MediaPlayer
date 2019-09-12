@@ -16,6 +16,7 @@ def track():
     cmd = "sudo dbus-send --system --print-reply --dest=org.bluez /org/bluez/hci0/dev_D0_D2_B0_0D_1A_8E org.freedesktop.DBus.Properties.Get string:org.bluez.MediaControl1 string:Player"
     player = getName(subprocess.check_output(cmd, shell=True))
     cmd2 = "sudo dbus-send --system --print-reply --dest=org.bluez "+ player +" org.freedesktop.DBus.Properties.Get string:org.bluez.MediaPlayer1 string:Track"                  
+    print("Connecting to Player: " + player)
     vals = subprocess.check_output(cmd2,shell=True)
     processTrack(vals)
  
@@ -34,10 +35,11 @@ def processTrack(val):
             last = count
     arr = val[first:last-1]
     li = list(arr.split("\n"))
+    print("LIST: " + li)
     song = getName(li[track_index])
     artist = getName(li[artist_index])
-    print(getName(li[track_index]))
-    print(getName(li[artist_index]))
+    print("PRE SONG: "+getName(li[track_index]))
+    print("PRE Artist: "+getName(li[artist_index]))
 
     
 def getName(s):
