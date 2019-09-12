@@ -36,6 +36,8 @@ def processTrack(val):
     li = list(arr.split("\n"))
     song = getName(li[track_index])
     artist = getName(li[artist_index])
+    print(getName(li[track_index]))
+    print(getName(li[artist_index]))
 
     
 def getName(s):
