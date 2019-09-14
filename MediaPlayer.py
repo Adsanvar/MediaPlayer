@@ -27,17 +27,21 @@ def processTrack(val):
     last = 0
     track_index = 3
     artist_index = 19
-    for e in val:
-        count += 1
-        if( e == "["):
-            first = count
-        if( e == "]"):
-            last = count
-    arr = val[first:last-1]
-    li = list(arr.split("\n"))
-    song = getName(li[track_index])
-    artist = getName(li[artist_index])
 
+    try:
+        for e in val:
+            count += 1
+            if( e == "["):
+                first = count
+            if( e == "]"):
+                last = count
+        arr = val[first:last-1]
+        li = list(arr.split("\n"))
+        song = getName(li[track_index])
+        artist = getName(li[artist_index])
+    except Exception as identifier:
+        print(str(identifier))
+        
     
 def getName(s):
     count = 0 
@@ -107,7 +111,6 @@ def MediaPlayer():
             print("Vol Up")
             try:
                 os.system("amixer set Master 2%+")
-                track()
             except Exception as e:
                 print(str(e))
             if click == 1:
@@ -119,7 +122,6 @@ def MediaPlayer():
             print("Vol Down")
             try:
                 os.system("amixer set Master 2%-")
-                track()
             except Exception as e:
                 print(str(e))
             if click == 1:
